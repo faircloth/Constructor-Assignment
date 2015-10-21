@@ -6,9 +6,11 @@
 
 var Dog = function Dog(params) {
   params = params || {};
-  this.status = 'normal';
+  this.status = params.status || 'normal';
   this.color = params.color;
   this.hungry = params.hungry != undefined || params.hungry == false ? false : true;
+  // how Tim did it in class, good way to set defaults
+  // this.hungry = (params.hungry !== undefined) ? params.hungry : true;
   this.owner = params.owner;
 };
 
